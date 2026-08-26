@@ -1,5 +1,5 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
-import { HelloWorld, IHelloWorldProps } from "./HelloWorld";
+import { MentorCard, IMentorCardProps } from "./MentorCard";
 import * as React from "react";
 
 export class MentoshipReact implements ComponentFramework.ReactControl<IInputs, IOutputs> {
@@ -33,13 +33,13 @@ export class MentoshipReact implements ComponentFramework.ReactControl<IInputs, 
      * @returns ReactElement root react element for the control
      */
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
-        const props: IHelloWorldProps = { name: context.parameters.sampleProperty.raw ?? "Guest" };
+        const props: IMentorCardProps = { name: context.parameters.mentorName.raw ?? "Guest", role: context.parameters.mentorRole.raw ?? "Mentor" };
         return React.createElement(
-            HelloWorld, props
+            MentorCard, props
         );
     }
 
-    /**
+    /*
      * It is called by the framework prior to a control receiving new data.
      * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as "bound" or "output"
      */

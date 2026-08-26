@@ -18,7 +18,9 @@
       -->
     </external-service-usage>
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="mentorName" display-name-key="Mentor Name" description-key="Name of the mentor to display" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="mentorRole" display-name-key="Mentor Role" description-key="Role of the mentor" of-type="SingleLine.Text" usage="input" required="false"/>
+
     <!--
       Property node's of-type attribute can be of-type-group attribute.
       Example:
